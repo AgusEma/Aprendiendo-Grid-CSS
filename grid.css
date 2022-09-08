@@ -108,3 +108,52 @@ img {
   grid-column: 1 / span 2;
 }
 
+/* POSICIONAMIENTO CON NOMBRES DE GRID LINES */
+.grid-line-names {
+  display: grid;
+  grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+  grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4];
+}
+
+.grid-line-names .item:nth-child(3) {
+  color: cyan;
+  grid-row: linea-r3 / linea-r4;
+  grid-column: linea-c1 / linea-c4;
+}
+
+/* POSICIONAMIENTO CON GRID AREAS */
+.grid-areas {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 100px repeat(2, 1fr) 60px;
+  grid-template-areas: 
+    "header   header"
+    "content  sidebar"
+    "content  ."
+    "footer   footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Concepto de la Grid Implícita */
+
+.grid-implicit {
+  /* Grid de 4x3 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+}
