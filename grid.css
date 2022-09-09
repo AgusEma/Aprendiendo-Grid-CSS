@@ -150,10 +150,92 @@ img {
 }
 
 /* Concepto de la Grid Implícita */
+/* inline-grid */
 
 .grid-implicit {
   /* Grid de 4x3 */
+  width: 40%;
   display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 200px);
 }
+
+
+/* Flujo de la Grid */
+.grid-flow {
+  display: grid;
+  /* Grid de 5x3 */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  grid-auto-flow: row;
+  grid-auto-rows: 150px;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+/* Flujo Denso de la Grid */
+.grid-flow-dense {
+  display: grid;
+  /* Grid de 5x4 */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  grid-auto-flow: row dense;
+  grid-auto-flow: column dense;
+}
+
+/* .grid-flow-dense .item:nth-child(9) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+} */
+
+.grid-flow-dense .item:nth-child(11) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+/* Grid Layers: Celdas en capas (superposición) */
+.grid-layers {
+  display: grid;
+  /* Grid de 4x4 */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.grid-layers .item:nth-child(1) {
+  background-color: yellow;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.grid-layers .item:nth-child(2) {
+  background-color: blue;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.grid-layers .item:nth-child(3) {
+  background-color: green;
+  grid-column: 1 / 3;
+  grid-row: 3 / 5;
+}
+
+.grid-layers .item:nth-child(4) {
+  background-color: orange;
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+}
+
+.grid-layers .item:nth-child(5) {
+  background-color: purple;
+  opacity: .75;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+}
+
+/* Orden y Alineación de Grid Items */
+/* .grid-order {
+
+} */
