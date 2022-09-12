@@ -236,6 +236,74 @@ img {
 }
 
 /* Orden y Alineación de Grid Items */
-/* .grid-order {
+.grid-order {
+  display: grid;
+  /* Grid de 3x2 */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
 
-} */
+.grid-order .item:nth-child(1) {
+  order: 1;
+}
+
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+
+.grid-order .item.item:nth-child(5) {
+  order: -1;
+}
+
+.grid-align {
+  display: grid;
+  /* Grid de 3x2 */
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  justify-items: stretch;
+  justify-items: start;
+  justify-items: center;
+  justify-items: end;
+  align-items: stretch;
+  align-items: start;
+  align-items: center;
+  align-items: end;
+}
+
+.grid-align .item:nth-child(4) {
+  justify-self: start;
+  align-items: start;
+}
+
+/* Alineación de Grid Tracks */
+.grid-align-tracks {
+  display: grid;
+  /* Grid de 3x2 */
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  justify-content: start;
+  justify-content: center;
+  justify-content: end;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  align-content: start;
+  align-content: center;
+  align-content: end;
+  align-content: space-between;
+  align-content: space-around;
+  align-content: space-evenly;
+}
+
+/* Tamaños Máximos y Mínimos de Grid Tracks */
+.grid-min-max {
+  display: grid;
+  /* Grid de 4x? */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(100px, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, 200px));
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(max-content, 200px));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+}
